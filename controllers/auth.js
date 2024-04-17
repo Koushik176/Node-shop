@@ -8,10 +8,13 @@ const { validationResult } = require("express-validator")
 // const { param } = require("../routes/auth")
 // const path = require("path")
 
-const secretAccessKey = Buffer.from("pl3hJT3SiwDDY7j44lkb0D8t282EVG/VrLEmHIRX")
+require("dotenv").config()
+
+const accessKey = process.env.ACCESS_KEY
+const secretAccessKey = process.env.SECRET_KEY
 
 AWS.config.update({
-  accessKeyId: "AKIA2UC3BJPAWWHGSIXC",
+  accessKeyId: accessKey,
   secretAccessKey: secretAccessKey,
   region: "ap-south-1", // Change to your preferred AWS region
 })
