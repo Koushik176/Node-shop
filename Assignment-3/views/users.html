@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Users</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/users.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a href="/">Home</a></li>
+          <li class="main-header__item">
+            <a class="active" href="/admin/users">Users</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form class="user-form" action="/admin/users" method="POST">
+        <div class="form-control">
+          <label for="user">User</label>
+          <input type="text" name="user" id="user" />
+        </div>
+        <button type="submit">Add User</button>
+      </form>
+      <div class="user-list">
+        <ul>
+          <li>User1</li>
+          <li>User2</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
