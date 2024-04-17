@@ -1,6 +1,8 @@
-node_modules/
-Assignment-1/
-Assignment-2/
-Assignment-3/
-Assignment-4/
+Assignment-1
+Assignment-2
+Assignment-3
+Assignment-4
+
 .env
+
+node_modules/
