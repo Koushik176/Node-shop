@@ -152,30 +152,30 @@ exports.postSignup = (req, res, next) => {
     })
     .then((result) => {
       res.redirect("/login")
-      // const params = {
-      //   Destination: {
-      //     ToAddresses: [email], // Replace with the recipient's email address
-      //   },
-      //   Message: {
-      //     Body: {
-      //       Text: {
-      //         Data: "you successfully signed up! Thank you",
-      //       },
-      //     },
-      //     Subject: {
-      //       Data: "Signup Success!",
-      //     },
-      //   },
-      //   Source: "koushikashok176@gmail.com", // Replace with your verified sender email address
-      // }
+      const params = {
+        Destination: {
+          ToAddresses: [email], // Replace with the recipient's email address
+        },
+        Message: {
+          Body: {
+            Text: {
+              Data: "you successfully signed up! Thank you",
+            },
+          },
+          Subject: {
+            Data: "Signup Success!",
+          },
+        },
+        Source: "koushikashok176@gmail.com", // Replace with your verified sender email address
+      }
 
-      // return ses.sendEmail(params, (err, data) => {
-      //   if (err) {
-      //     console.error("Error sending email:", err)
-      //   } else {
-      //     console.log("Email sent:", data)
-      //   }
-      // })
+      return ses.sendEmail(params, (err, data) => {
+        if (err) {
+          console.error("Error sending email:", err)
+        } else {
+          console.log("Email sent:", data)
+        }
+      })
     })
     .catch((err) => {
       const error = new Error(err)
