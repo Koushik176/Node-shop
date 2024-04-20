@@ -18,7 +18,11 @@ routes.post("/cart", isAuth, shopController.postCart)
 
 routes.post("/cart-delete-item", isAuth, shopController.postCartDeleteProduct)
 
-routes.post("/create-order", isAuth, shopController.postOrder)
+routes.get("/checkout", isAuth, shopController.getCheckout)
+
+routes.get('/checkout/success', shopController.getCheckoutSuccess)
+
+routes.get('/checkout/cancel', isAuth, shopController.getCheckout)
 
 routes.get("/orders", isAuth, shopController.getOrders)
 
